@@ -1,0 +1,569 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: #f4f4f4;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 2rem 0;
+    background: #fff;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.profile {
+    display: inline-block;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Profile Image */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid transparent; /* Remove default border */
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 0.7), rgba(0, 255, 0, 0.7), rgba(0, 0, 255, 0.7)); /* RGB gradient */
+    background-size: 200% 200%;
+    -webkit-mask-image: -webkit-radial-gradient(circle, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 100%);
+    animation: rgbBorderGlow 3s ease-in-out infinite; /* Apply RGB glow animation */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.profile-img:hover {
+    transform: scale(1.1);
+}
+
+/* RGB Light Border Animation */
+@keyframes rgbBorderGlow {
+    0% {
+        background-position: 200% 0%;
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5); /* Red */
+    }
+    25% {
+        background-position: 0% 200%;
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.5); /* Green */
+    }
+    50% {
+        background-position: 0% 0%;
+        box-shadow: 0 0 10px rgba(0, 0, 255, 0.7), 0 0 20px rgba(0, 0, 255, 0.5); /* Blue */
+    }
+    75% {
+        background-position: 200% 200%;
+        box-shadow: 0 0 10px rgba(255, 255, 0, 0.7), 0 0 20px rgba(255, 255, 0, 0.5); /* Yellow */
+    }
+    100% {
+        background-position: 200% 0%;
+        box-shadow: 0 0 10px rgba(255, 0, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.5); /* Magenta */
+    }
+}
+
+
+.profile-img:hover {
+    transform: scale(1.1);
+}
+
+/* Profile Name Style */
+.name {
+    margin-top: 1rem;
+    font-size: 2rem;
+    color: #4A90E2; /* A nice blue color */
+    text-align: center;
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
+    font-weight: 600; /* Slightly bold */
+    letter-spacing: 2px; /* Slight space between letters */
+    text-transform: uppercase; /* Make the name uppercase */
+    position: relative; /* For adding effects */
+    animation: nameAnimation 2s ease-in-out forwards;
+}
+
+/* Name Animation */
+@keyframes nameAnimation {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Text Shadow Effect */
+.name {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), 0 0 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+/* Hover Effect */
+.name:hover {
+    color: #FF6F61; /* A different color on hover (a warm coral shade) */
+    cursor: pointer;
+    transform: scale(1.05); /* Slight zoom effect */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Social Media Icons Section */
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centers the icons horizontally */
+    gap: 20px; /* Adds spacing between the icons */
+    margin-top: 1rem; /* Space between name and icons */
+}
+
+.social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px; /* Vertically center the icon */
+    font-size: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Facebook Icon */
+.social-icon.facebook {
+    background-color: #3b5998; /* Facebook blue */
+}
+
+.social-icon.facebook:hover {
+    background-color: #4A90E2; /* Lighter blue on hover */
+}
+
+/* Instagram Icon */
+.social-icon.instagram {
+    background-color: #e1306c; /* Instagram red/pink */
+}
+
+.social-icon.instagram:hover {
+    background-color: #d91b45; /* Darker red on hover */
+}
+
+/* LinkedIn Icon */
+.social-icon.linkedin {
+    background-color: #0077b5; /* LinkedIn dark blue */
+}
+
+.social-icon.linkedin:hover {
+    background-color: #005582; /* Darker blue on hover */
+}
+
+
+/* Optional: Adjusting for smaller screens */
+@media (max-width: 768px) {
+    .name {
+        font-size: 1.5rem; /* Adjust size for smaller screens */
+    }
+}
+
+
+.github-link a{
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background: #333;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.github-link:hover {
+    transform: scale(1.05);
+}
+
+/* Go to Top Button */
+.go-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent; /* Remove the black background */
+    color: #fff;
+    border: 2px solid #fff; /* White border to maintain visibility */
+    width: 60px; /* Default size for larger screens */
+    height: 60px;
+    border-radius: 50%;
+    font-size: 30px; /* Default font size for larger screens */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.3s ease;
+    z-index: 1000; /* Ensure button is above other content */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Initial glow */
+    animation: rgbGlow 3s infinite alternate; /* Apply the RGB glow effect */
+    background: linear-gradient(45deg, rgba(255, 0, 0, 0.3), rgba(0, 255, 0, 0.3), rgba(0, 0, 255, 0.3)); /* Gradient background */
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+/* Hover Effect */
+.go-to-top-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly visible on hover */
+    transform: scale(1.1);
+}
+
+/* Show the button when scrolled down */
+.go-to-top-btn.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RGB Light Animation */
+@keyframes rgbGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5); /* Red */
+        background-color: transparent;
+    }
+    25% {
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.5); /* Green */
+        background-color: transparent;
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(0, 0, 255, 0.7), 0 0 20px rgba(0, 0, 255, 0.5); /* Blue */
+        background-color: transparent;
+    }
+    75% {
+        box-shadow: 0 0 10px rgba(255, 255, 0, 0.7), 0 0 20px rgba(255, 255, 0, 0.5); /* Yellow */
+        background-color: transparent;
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 0, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.5); /* Magenta */
+        background-color: transparent;
+    }
+}
+
+/* Optional: A smooth scroll effect for the page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .go-to-top-btn {
+        width: 50px; /* Reduce size on smaller screens */
+        height: 50px;
+        font-size: 24px; /* Reduce icon size */
+        bottom: 15px; /* Adjust position */
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .go-to-top-btn {
+        width: 45px; /* Further reduce size on very small screens */
+        height: 45px;
+        font-size: 20px; /* Smaller font size */
+        bottom: 10px; /* Adjust position */
+        right: 10px;
+    }
+}
+
+
+/* Projects Section */
+.projects {
+    flex: 1;
+    padding: 2rem;
+    background: #fff;
+    max-width: 800px;
+    margin: 2rem auto;
+    margin-bottom: 2rem;  /* Allow some space before the footer */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    overflow-y: auto;  /* Allow scrolling if content overflows */
+}
+
+.projects h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/* Projects Section */
+.projects-list {
+    display: flex;               /* Change from grid to flexbox */
+    flex-direction: column;      /* Stack items vertically */
+    gap: 1.5rem;                 /* Space between each project card */
+}
+
+
+/* Individual Project Card */
+.project-card {
+    width: 100%; /* Make sure cards take full width */
+    padding: 2rem;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: box-shadow 0.3s, transform 0.3s;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+
+.project-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.6rem; /* Increase title font size */
+    color: #333;
+}
+
+.no-content-image, .error-image {
+    display: block;
+    max-width: 100%;
+    margin: 2rem auto;
+    height: auto;
+    opacity: 0.8;
+}
+
+.project-card p {
+    color: #666;
+    font-size: 1.1rem; /* Increase description font size */
+    margin-bottom: 1.5rem;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 0.6rem 1.2rem; /* Increase button size */
+    color: #fff;
+    background: #333;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.project-link:hover {
+    background: #555;
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: #fff;
+    font-size: 0.9rem;
+    width: 100%;
+    margin-top: auto;  /* Ensure footer stays at the bottom of the page */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .name {
+        font-size: 1.5rem;
+    }
+
+    ..projects-list {
+        grid-template-columns: 1fr; /* Stack the cards vertically */
+    }
+
+    .project-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Accessibility Focus Styles */
+:focus {
+    outline: 3px solid #333;
+}
+
+/* Preloader container */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    flex-direction: column;
+    padding: 20px; /* Padding for small screens */
+}
+
+/* Preloader content container */
+.preloader-content {
+    text-align: center;
+    color: #fff;
+}
+
+/* Spinner animation */
+.spinner {
+    border: 8px solid rgba(255, 255, 255, 0.1);
+    border-top: 8px solid #ff4081;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    animation: spin 1s cubic-bezier(0.6, 0.1, 0.4, 0.9) infinite;
+    margin-bottom: 20px;
+}
+
+/* Loading text styling */
+#preloader p {
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeText 1.5s ease-in-out infinite;
+    color: #ff4081;
+}
+
+/* Spinner animation keyframes */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Fade-in and fade-out effect for loading text */
+@keyframes fadeText {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Hide content initially */
+#content {
+    display: none; /* Content hidden initially */
+}
+
+/* Responsive adjustments */
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .spinner {
+        width: 50px;
+        height: 50px;
+        border-width: 6px;
+    }
+    #preloader p {
+        font-size: 1rem;
+    }
+}
+
+/* Small devices (phones, 480px and up) */
+@media (max-width: 480px) {
+    .spinner {
+        width: 40px;
+        height: 40px;
+        border-width: 4px;
+    }
+    #preloader p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Marquee Styles */
+#marquee-container {
+    display: none; /* Initially hidden */
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    width: 100%; /* Ensure the container takes full width */
+    box-sizing: border-box;
+}
+
+/* Make sure the marquee moves smoothly across different screen sizes */
+.marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    width: 100%; /* Use full width of the container */
+}
+
+/* Marquee text will take as much space as needed */
+.marquee-text {
+    display: inline-block;
+    padding-right: 100%; /* Space for the next loop */
+    font-size: 1rem; /* Default size for small screens */
+    animation: scrollMarquee linear infinite; /* Ensure the animation runs infinitely */
+}
+
+/* Adjust font size for larger screens */
+@media (min-width: 768px) {
+    .marquee-text {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .marquee-text {
+        font-size: 1.4rem; /* Larger font size for bigger screens */
+    }
+}
+
+/* Keyframes for scrolling effect */
+@keyframes scrollMarquee {
+    0% {
+        transform: translateX(100%); /* Start off the right side */
+    }
+    100% {
+        transform: translateX(-100%); /* Move completely off the left side */
+    }
+}
+
+/* Disable horizontal scrollbar when marquee is visible */
+body.marquee-active {
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+/* If needed, ensure no scroll bar in html element as well */
+html.marquee-active {
+    overflow-x: hidden;
+}

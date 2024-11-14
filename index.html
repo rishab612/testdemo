@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishab Roy Portfolio</title>
+    <meta name="description" content="Portfolio showcasing projects and skills of Rishab Roy, a software developer with expertise in JavaScript, Python, and web development.">
+    <meta name="keywords" content="Software Developer, Portfolio, Web Development, JavaScript, Python, GitHub">
+    <meta name="author" content="Rishab Roy">
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+    <div id="content">
+        <!-- Header Section -->
+        <header class="header" aria-label="Profile Header">
+            <div class="profile">
+                <img src="generated-image.webp" alt="Profile photo of Rishab Roy" class="profile-img animate" loading="lazy">
+                <h1 class="name" aria-label="Name">Rishab Roy</h1>
+                <!-- Social Media Icons -->
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/your-profile" target="_blank" class="social-icon facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/your-profile" target="_blank" class="social-icon instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="social-icon linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <!-- GitHub Profile Link -->
+                <div class="github-link">
+                    <a href="https://github.com/rishab612" target="_blank">
+                        <i class="fab fa-github"></i> GitHub Profile
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Marquee Section (Dynamically generated from Firebase) -->
+        <div id="marquee-container" style="display: none;"></div>
+
+
+
+        <!-- Projects Section -->
+        <section class="projects" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">Projects</h2>
+            <div class="projects-list">
+                <!-- Project cards will be inserted here dynamically -->
+            </div>
+        </section>
+
+        <!-- Go to Top Button -->
+        <button id="goToTop" class="go-to-top-btn">&#8593;</button>
+
+        <!-- Footer Section -->
+        <footer class="footer" aria-label="Footer">
+            <p>&copy; 2024 Rishab Roy. All rights reserved. <i class="fas fa-heart"></i></p>
+        </footer>
+    </div>
+
+    <!-- Custom Scripts -->
+    <script type="module" src="scripts.js"></script>
+</body>
+</html>
