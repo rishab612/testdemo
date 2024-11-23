@@ -35,11 +35,14 @@ body {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 4px solid transparent; /* Remove default border */
-    background-image: linear-gradient(to right, rgba(255, 0, 0, 0.7), rgba(0, 255, 0, 0.7), rgba(0, 0, 255, 0.7)); /* RGB gradient */
+    border: 4px solid transparent;
+    /* Remove default border */
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 0.7), rgba(0, 255, 0, 0.7), rgba(0, 0, 255, 0.7));
+    /* RGB gradient */
     background-size: 200% 200%;
-    -webkit-mask-image: -webkit-radial-gradient(circle, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 100%);
-    animation: rgbBorderGlow 3s ease-in-out infinite; /* Apply RGB glow animation */
+    -webkit-mask-image: -webkit-radial-gradient(circle, rgba(255, 255, 255, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    animation: rgbBorderGlow 3s ease-in-out infinite;
+    /* Apply RGB glow animation */
     transition: transform 0.3s ease-in-out;
 }
 
@@ -52,23 +55,32 @@ body {
 @keyframes rgbBorderGlow {
     0% {
         background-position: 200% 0%;
-        box-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5); /* Red */
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+        /* Red */
     }
+
     25% {
         background-position: 0% 200%;
-        box-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.5); /* Green */
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.5);
+        /* Green */
     }
+
     50% {
         background-position: 0% 0%;
-        box-shadow: 0 0 10px rgba(0, 0, 255, 0.7), 0 0 20px rgba(0, 0, 255, 0.5); /* Blue */
+        box-shadow: 0 0 10px rgba(0, 0, 255, 0.7), 0 0 20px rgba(0, 0, 255, 0.5);
+        /* Blue */
     }
+
     75% {
         background-position: 200% 200%;
-        box-shadow: 0 0 10px rgba(255, 255, 0, 0.7), 0 0 20px rgba(255, 255, 0, 0.5); /* Yellow */
+        box-shadow: 0 0 10px rgba(255, 255, 0, 0.7), 0 0 20px rgba(255, 255, 0, 0.5);
+        /* Yellow */
     }
+
     100% {
         background-position: 200% 0%;
-        box-shadow: 0 0 10px rgba(255, 0, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.5); /* Magenta */
+        box-shadow: 0 0 10px rgba(255, 0, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.5);
+        /* Magenta */
     }
 }
 
@@ -81,13 +93,19 @@ body {
 .name {
     margin-top: 1rem;
     font-size: 2rem;
-    color: #4A90E2; /* A nice blue color */
+    color: #4A90E2;
+    /* A nice blue color */
     text-align: center;
-    font-family: 'Poppins', sans-serif; /* Modern, clean font */
-    font-weight: 600; /* Slightly bold */
-    letter-spacing: 2px; /* Slight space between letters */
-    text-transform: uppercase; /* Make the name uppercase */
-    position: relative; /* For adding effects */
+    font-family: 'Poppins', sans-serif;
+    /* Modern, clean font */
+    font-weight: 600;
+    /* Slightly bold */
+    letter-spacing: 2px;
+    /* Slight space between letters */
+    text-transform: uppercase;
+    /* Make the name uppercase */
+    position: relative;
+    /* For adding effects */
     animation: nameAnimation 2s ease-in-out forwards;
 }
 
@@ -97,6 +115,7 @@ body {
         transform: translateY(20px);
         opacity: 0;
     }
+
     100% {
         transform: translateY(0);
         opacity: 1;
@@ -105,23 +124,29 @@ body {
 
 /* Text Shadow Effect */
 .name {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), 0 0 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), 0 0 15px rgba(0, 0, 0, 0.2);
+    /* Soft shadow */
 }
 
 /* Hover Effect */
 .name:hover {
-    color: #FF6F61; /* A different color on hover (a warm coral shade) */
+    color: #FF6F61;
+    /* A different color on hover (a warm coral shade) */
     cursor: pointer;
-    transform: scale(1.05); /* Slight zoom effect */
+    transform: scale(1.05);
+    /* Slight zoom effect */
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 /* Social Media Icons Section */
 .social-icons {
     display: flex;
-    justify-content: center; /* Centers the icons horizontally */
-    gap: 20px; /* Adds spacing between the icons */
-    margin-top: 1rem; /* Space between name and icons */
+    justify-content: center;
+    /* Centers the icons horizontally */
+    gap: 20px;
+    /* Adds spacing between the icons */
+    margin-top: 1rem;
+    /* Space between name and icons */
 }
 
 .social-icon {
@@ -131,48 +156,56 @@ body {
     color: #fff;
     border-radius: 50%;
     text-align: center;
-    line-height: 40px; /* Vertically center the icon */
+    line-height: 40px;
+    /* Vertically center the icon */
     font-size: 20px;
     transition: background-color 0.3s, transform 0.3s;
 }
 
 /* Facebook Icon */
 .social-icon.facebook {
-    background-color: #3b5998; /* Facebook blue */
+    background-color: #3b5998;
+    /* Facebook blue */
 }
 
 .social-icon.facebook:hover {
-    background-color: #4A90E2; /* Lighter blue on hover */
+    background-color: #4A90E2;
+    /* Lighter blue on hover */
 }
 
 /* Instagram Icon */
 .social-icon.instagram {
-    background-color: #e1306c; /* Instagram red/pink */
+    background-color: #e1306c;
+    /* Instagram red/pink */
 }
 
 .social-icon.instagram:hover {
-    background-color: #d91b45; /* Darker red on hover */
+    background-color: #d91b45;
+    /* Darker red on hover */
 }
 
 /* LinkedIn Icon */
 .social-icon.linkedin {
-    background-color: #0077b5; /* LinkedIn dark blue */
+    background-color: #0077b5;
+    /* LinkedIn dark blue */
 }
 
 .social-icon.linkedin:hover {
-    background-color: #005582; /* Darker blue on hover */
+    background-color: #005582;
+    /* Darker blue on hover */
 }
 
 
 /* Optional: Adjusting for smaller screens */
 @media (max-width: 768px) {
     .name {
-        font-size: 1.5rem; /* Adjust size for smaller screens */
+        font-size: 1.5rem;
+        /* Adjust size for smaller screens */
     }
 }
 
 
-.github-link a{
+.github-link a {
     display: inline-block;
     margin-top: 0.5rem;
     padding: 0.5rem 1rem;
@@ -193,30 +226,39 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: transparent; /* Remove the black background */
+    background-color: transparent;
+    /* Remove the black background */
     color: #fff;
-    border: 2px solid #fff; /* White border to maintain visibility */
-    width: 60px; /* Default size for larger screens */
+    border: 2px solid #fff;
+    /* White border to maintain visibility */
+    width: 60px;
+    /* Default size for larger screens */
     height: 60px;
     border-radius: 50%;
-    font-size: 30px; /* Default font size for larger screens */
+    font-size: 30px;
+    /* Default font size for larger screens */
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     opacity: 0;
     transition: opacity 0.5s ease, transform 0.3s ease;
-    z-index: 1000; /* Ensure button is above other content */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Initial glow */
-    animation: rgbGlow 3s infinite alternate; /* Apply the RGB glow effect */
-    background: linear-gradient(45deg, rgba(255, 0, 0, 0.3), rgba(0, 255, 0, 0.3), rgba(0, 0, 255, 0.3)); /* Gradient background */
+    z-index: 1000;
+    /* Ensure button is above other content */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    /* Initial glow */
+    animation: rgbGlow 3s infinite alternate;
+    /* Apply the RGB glow effect */
+    background: linear-gradient(45deg, rgba(255, 0, 0, 0.3), rgba(0, 255, 0, 0.3), rgba(0, 0, 255, 0.3));
+    /* Gradient background */
     border: 2px solid transparent;
     background-clip: padding-box;
 }
 
 /* Hover Effect */
 .go-to-top-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Slightly visible on hover */
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Slightly visible on hover */
     transform: scale(1.1);
 }
 
@@ -229,23 +271,32 @@ body {
 /* RGB Light Animation */
 @keyframes rgbGlow {
     0% {
-        box-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5); /* Red */
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+        /* Red */
         background-color: transparent;
     }
+
     25% {
-        box-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.5); /* Green */
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.5);
+        /* Green */
         background-color: transparent;
     }
+
     50% {
-        box-shadow: 0 0 10px rgba(0, 0, 255, 0.7), 0 0 20px rgba(0, 0, 255, 0.5); /* Blue */
+        box-shadow: 0 0 10px rgba(0, 0, 255, 0.7), 0 0 20px rgba(0, 0, 255, 0.5);
+        /* Blue */
         background-color: transparent;
     }
+
     75% {
-        box-shadow: 0 0 10px rgba(255, 255, 0, 0.7), 0 0 20px rgba(255, 255, 0, 0.5); /* Yellow */
+        box-shadow: 0 0 10px rgba(255, 255, 0, 0.7), 0 0 20px rgba(255, 255, 0, 0.5);
+        /* Yellow */
         background-color: transparent;
     }
+
     100% {
-        box-shadow: 0 0 10px rgba(255, 0, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.5); /* Magenta */
+        box-shadow: 0 0 10px rgba(255, 0, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.5);
+        /* Magenta */
         background-color: transparent;
     }
 }
@@ -258,20 +309,26 @@ html {
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
     .go-to-top-btn {
-        width: 50px; /* Reduce size on smaller screens */
+        width: 50px;
+        /* Reduce size on smaller screens */
         height: 50px;
-        font-size: 24px; /* Reduce icon size */
-        bottom: 15px; /* Adjust position */
+        font-size: 24px;
+        /* Reduce icon size */
+        bottom: 15px;
+        /* Adjust position */
         right: 15px;
     }
 }
 
 @media (max-width: 480px) {
     .go-to-top-btn {
-        width: 45px; /* Further reduce size on very small screens */
+        width: 45px;
+        /* Further reduce size on very small screens */
         height: 45px;
-        font-size: 20px; /* Smaller font size */
-        bottom: 10px; /* Adjust position */
+        font-size: 20px;
+        /* Smaller font size */
+        bottom: 10px;
+        /* Adjust position */
         right: 10px;
     }
 }
@@ -284,11 +341,13 @@ html {
     background: #fff;
     max-width: 800px;
     margin: 2rem auto;
-    margin-bottom: 2rem;  /* Allow some space before the footer */
+    margin-bottom: 2rem;
+    /* Allow some space before the footer */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease-in-out;
-    overflow-y: auto;  /* Allow scrolling if content overflows */
+    overflow-y: auto;
+    /* Allow scrolling if content overflows */
 }
 
 .projects h2 {
@@ -300,15 +359,19 @@ html {
 
 /* Projects Section */
 .projects-list {
-    display: flex;               /* Change from grid to flexbox */
-    flex-direction: column;      /* Stack items vertically */
-    gap: 1.5rem;                 /* Space between each project card */
+    display: flex;
+    /* Change from grid to flexbox */
+    flex-direction: column;
+    /* Stack items vertically */
+    gap: 1.5rem;
+    /* Space between each project card */
 }
 
 
 /* Individual Project Card */
 .project-card {
-    width: 100%; /* Make sure cards take full width */
+    width: 100%;
+    /* Make sure cards take full width */
     padding: 2rem;
     background: #fafafa;
     border: 1px solid #e0e0e0;
@@ -325,11 +388,13 @@ html {
 
 .project-card h3 {
     margin-bottom: 1rem;
-    font-size: 1.6rem; /* Increase title font size */
+    font-size: 1.6rem;
+    /* Increase title font size */
     color: #333;
 }
 
-.no-content-image, .error-image {
+.no-content-image,
+.error-image {
     display: block;
     max-width: 100%;
     margin: 2rem auto;
@@ -339,13 +404,15 @@ html {
 
 .project-card p {
     color: #666;
-    font-size: 1.1rem; /* Increase description font size */
+    font-size: 1.1rem;
+    /* Increase description font size */
     margin-bottom: 1.5rem;
 }
 
 .project-link {
     display: inline-block;
-    padding: 0.6rem 1.2rem; /* Increase button size */
+    padding: 0.6rem 1.2rem;
+    /* Increase button size */
     color: #fff;
     background: #333;
     border-radius: 5px;
@@ -367,13 +434,19 @@ html {
     color: #fff;
     font-size: 0.9rem;
     width: 100%;
-    margin-top: auto;  /* Ensure footer stays at the bottom of the page */
+    margin-top: auto;
+    /* Ensure footer stays at the bottom of the page */
 }
 
 /* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeInUp {
@@ -381,6 +454,7 @@ html {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -399,7 +473,8 @@ html {
     }
 
     ..projects-list {
-        grid-template-columns: 1fr; /* Stack the cards vertically */
+        grid-template-columns: 1fr;
+        /* Stack the cards vertically */
     }
 
     .project-card {
@@ -425,7 +500,8 @@ html {
     align-items: center;
     z-index: 9999;
     flex-direction: column;
-    padding: 20px; /* Padding for small screens */
+    padding: 20px;
+    /* Padding for small screens */
 }
 
 /* Preloader content container */
@@ -461,6 +537,7 @@ html {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -468,9 +545,12 @@ html {
 
 /* Fade-in and fade-out effect for loading text */
 @keyframes fadeText {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 0;
     }
+
     50% {
         opacity: 1;
     }
@@ -478,7 +558,7 @@ html {
 
 /* Hide content initially */
 #content {
-    display: none; /* Content hidden initially */
+    display: none;
 }
 
 /* Responsive adjustments */
@@ -490,6 +570,7 @@ html {
         height: 50px;
         border-width: 6px;
     }
+
     #preloader p {
         font-size: 1rem;
     }
@@ -502,6 +583,7 @@ html {
         height: 40px;
         border-width: 4px;
     }
+
     #preloader p {
         font-size: 0.9rem;
     }
@@ -509,33 +591,31 @@ html {
 
 /* Marquee Styles */
 #marquee-container {
-    display: none; /* Initially hidden */
+    display: none;
     background-color: red;
     color: white;
     text-align: center;
     padding: 10px 0;
     font-size: 1.2rem;
-    width: 100%; /* Ensure the container takes full width */
+    width: 100%;
     box-sizing: border-box;
 }
 
-/* Make sure the marquee moves smoothly across different screen sizes */
 .marquee {
     white-space: nowrap;
     overflow: hidden;
     position: relative;
-    width: 100%; /* Use full width of the container */
+    width: 100%;
 }
 
-/* Marquee text will take as much space as needed */
 .marquee-text {
     display: inline-block;
-    padding-right: 100%; /* Space for the next loop */
-    font-size: 1rem; /* Default size for small screens */
-    animation: scrollMarquee linear infinite; /* Ensure the animation runs infinitely */
+    padding-right: 100%;
+    font-size: 1rem;
+    animation: scrollMarquee linear infinite;
+
 }
 
-/* Adjust font size for larger screens */
 @media (min-width: 768px) {
     .marquee-text {
         font-size: 1.2rem;
@@ -544,26 +624,25 @@ html {
 
 @media (min-width: 1024px) {
     .marquee-text {
-        font-size: 1.4rem; /* Larger font size for bigger screens */
+        font-size: 1.4rem;
     }
 }
 
 /* Keyframes for scrolling effect */
 @keyframes scrollMarquee {
     0% {
-        transform: translateX(100%); /* Start off the right side */
+        transform: translateX(100%);
     }
+
     100% {
-        transform: translateX(-100%); /* Move completely off the left side */
+        transform: translateX(-100%);
     }
 }
 
-/* Disable horizontal scrollbar when marquee is visible */
 body.marquee-active {
-    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-x: hidden;
 }
 
-/* If needed, ensure no scroll bar in html element as well */
 html.marquee-active {
     overflow-x: hidden;
 }
