@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+.message h1 {
+    font-size: 3rem;
+    color: #ff6f61;
+    animation: bounce 1s infinite alternate;
+}
+
+.message p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 20px;
+}
+
+/* Style for SVG image */
+.construction-image {
+    margin-top: 30px;
+    max-width: 100%;
+    height: auto;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Keyframes for bounce animation */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Keyframes for fadeIn animation (for the image) */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+    .message h1 {
+        font-size: 2.5rem;
+    }
+
+    .message p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Responsive Design - Mobile (Large) */
+@media (max-width: 768px) {
+    .message h1 {
+        font-size: 2rem;
+    }
+
+    .message p {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive Design - Mobile (Small) */
+@media (max-width: 480px) {
+    .message h1 {
+        font-size: 1.5rem;
+    }
+
+    .message p {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
