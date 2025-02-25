@@ -14,9 +14,17 @@ import {
 } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
 import { firebaseConfig } from "./firebaseConfig.js";
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const analytics = getAnalytics(app);
+
+// ✅ Inject Google AdSense Script
+const adsenseScript = document.createElement("script");
+adsenseScript.async = true;
+adsenseScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8838563256228399";
+adsenseScript.crossOrigin = "anonymous";
+document.head.appendChild(adsenseScript);
 
 document.addEventListener("DOMContentLoaded", async () => {
   const projectsList = document.querySelector(".projects-list");
@@ -39,6 +47,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     } data-project-id="${docId}" data-project-title="${project.title}">
                 ${linkText}
             </a>
+
+            <!-- Google AdSense Ad Unit -->
+            <ins class="adsbygoogle"
+                style="display:block; text-align:center;"
+                data-ad-client="ca-pub-8838563256228399"
+                data-ad-slot="1234567890"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         `;
 
     // Add event listener to track project link clicks
@@ -97,7 +116,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   observer.observe(sentinel);
 });
 
-// Go to Top Button functionality
+// ✅ Scroll to Top Button functionality
 window.onscroll = function () {
   const goToTopBtn = document.getElementById("goToTop");
   if (
@@ -110,7 +129,7 @@ window.onscroll = function () {
   }
 };
 
-// Scroll to the top when the button is clicked
+// ✅ Scroll to the top when the button is clicked
 document.getElementById("goToTop").onclick = function () {
   window.scrollTo({
     top: 0,
@@ -118,12 +137,14 @@ document.getElementById("goToTop").onclick = function () {
   });
 };
 
+// ✅ Disable Right-Click on Profile Image
 document.addEventListener("contextmenu", function (e) {
   if (e.target.classList.contains("profile-img")) {
     e.preventDefault();
   }
 });
 
+// ✅ Preloader Logic
 window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
   const content = document.getElementById("content");
@@ -148,7 +169,7 @@ window.addEventListener("load", () => {
   }
 });
 
-// Function to fetch marquee message from Firestore
+// ✅ Fetch Marquee Message from Firestore
 function fetchMarqueeMessage() {
   const marqueeRef = doc(db, "marqueeMessages", "message1");
   getDoc(marqueeRef)
@@ -169,7 +190,7 @@ function fetchMarqueeMessage() {
     });
 }
 
-
+// ✅ Show Marquee Message
 function showMarquee(message) {
   const marqueeContainer = document.getElementById("marquee-container");
   if (!marqueeContainer) {
@@ -189,27 +210,12 @@ function showMarquee(message) {
   const marqueeText = document.querySelector(".marquee-text");
   if (marqueeText) {
     setInitialAnimationDuration(marqueeText);
-
     adjustMarqueeSpeed();
-
     window.addEventListener("resize", adjustMarqueeSpeed);
   }
 }
 
-// Function to set initial animation duration before animation starts
-function setInitialAnimationDuration(marqueeText) {
-  const textWidth = marqueeText.offsetWidth;
-  const containerWidth = marqueeText.parentElement.offsetWidth;
-
-  const baseDuration = 8;
-  const duration = Math.max(
-    baseDuration,
-    (textWidth / containerWidth) * baseDuration
-  ); 
-  marqueeText.style.animationDuration = `${duration}s`; 
-}
-
-// Function to adjust the speed of the marquee based on text width
+// ✅ Adjust Marquee Speed
 function adjustMarqueeSpeed() {
   const marqueeText = document.querySelector(".marquee-text");
   if (marqueeText) {
@@ -221,8 +227,8 @@ function adjustMarqueeSpeed() {
       const duration = Math.max(
         baseDuration,
         (textWidth / containerWidth) * baseDuration
-      ); 
-      marqueeText.style.animationDuration = `${duration}s`; 
+      );
+      marqueeText.style.animationDuration = `${duration}s`;
     }, 0);
   }
 }
