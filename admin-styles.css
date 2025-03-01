@@ -1,0 +1,264 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f6f7, #959999ab);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background 0.3s;
+}
+
+/* Glassmorphism Effect */
+.admin-container, #login-container {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Heading */
+h2 {
+    color: rgb(3, 3, 3);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Form Inputs */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin: 10px 0;
+    padding: 14px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Button Styles */
+button {
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: #121212;
+    color: white;
+}
+
+body.dark-mode .admin-container, 
+body.dark-mode #login-container {
+    background: rgba(30, 30, 30, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode h2, 
+body.dark-mode p, 
+body.dark-mode a {
+    color: white;
+}
+
+body.dark-mode button {
+    background: linear-gradient(135deg, #333, #555);
+    color: white;
+}
+
+body.dark-mode button:hover {
+    background: linear-gradient(135deg, #555, #777);
+}
+
+/* Dark Mode Toggle */
+#dark-mode-toggle {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: #333;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    font-size: 1rem;
+}
+
+#dark-mode-toggle:hover {
+    background: #555;
+    transform: scale(1.1);
+}
+
+/* Admin Header */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#logout-btn {
+    background: linear-gradient(135deg, red, darkred);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+
+/* Project Table */
+#projects-list {
+    margin-top: 20px;
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+th {
+    background: #007BFF;
+    color: white;
+}
+
+td {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Buttons in Table */
+.edit-btn, .delete-btn {
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.edit-btn {
+    background: #ffcc00;
+    color: #333;
+}
+
+.edit-btn:hover {
+    background: #e6b800;
+}
+
+.delete-btn {
+    background: red;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: darkred;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admin-container, #login-container {
+        width: 95%;
+        max-width: 90%;
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    input, textarea, button {
+        font-size: 0.95rem;
+        padding: 12px;
+    }
+
+    #dark-mode-toggle {
+        top: 10px;
+        right: 15px;
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-container, #login-container {
+        width: 98%;
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    input, textarea, button {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+
+    #dark-mode-toggle {
+        top: 8px;
+        right: 10px;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    table {
+        font-size: 0.8rem;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+}

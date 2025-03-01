@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - CodeElevate</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <script type="module" src="admin-scripts.js"></script>
+</head>
+<body>
+    <div id="login-container">
+        <h2>Admin Login - CodeElevate</h2>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div id="admin-container" style="display: none;">
+        <div class="admin-header">
+            <h2>Admin Dashboard</h2>
+            <button id="logout-btn">Logout</button>
+        </div>
+
+        <p id="last-login">Last Login: Fetching...</p>
+
+        <h3>Add New Project</h3>
+        <form id="project-form">
+            <input type="text" id="title" placeholder="Project Title" required>
+            <textarea id="description" placeholder="Project Description" required></textarea>
+            <input type="url" id="link" placeholder="GitHub Link (optional)">
+            <button type="submit">Add Project</button>
+        </form>
+
+        <h3>Existing Projects</h3>
+        <div id="projects-list">
+            <!-- Projects Table Will Be Loaded Here -->
+        </div>
+    </div>
+</body>
+</html>
