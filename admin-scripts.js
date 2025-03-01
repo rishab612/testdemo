@@ -186,6 +186,18 @@ async function loadProjects() {
     });
 }
 
+// Function to check if the device is mobile
+function isMobileDevice() {
+    return /Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+}
+
+// Restrict access if it's a mobile device
+if (isMobileDevice()) {
+    document.body.innerHTML = "<h2>Access Denied: This panel is only accessible from a desktop.</h2>";
+    throw new Error("Access Denied: Mobile access is restricted.");
+    window.location.href = "https://codelevate.netlify.app/"; 
+}
+
 
 
 checkAuthState();
