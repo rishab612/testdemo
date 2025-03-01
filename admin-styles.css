@@ -283,6 +283,7 @@ td {
     }
 
     body::before {
+        content: "Access Denied: This admin panel can only be accessed from a desktop.";
         font-size: 1.5rem;
         font-weight: bold;
         max-width: 90%;
