@@ -11,6 +11,8 @@ body {
     transition: background 0.3s;
 }
 
+
+
 /* Glassmorphism Effect */
 .admin-container, #login-container {
     background: rgba(255, 255, 255, 0.15);
@@ -260,5 +262,29 @@ td {
 
     th, td {
         padding: 6px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #121212;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        padding: 20px;
+    }
+
+    #admin-container, #login-container {
+        display: none;
+    }
+
+    body::before {
+        font-size: 1.5rem;
+        font-weight: bold;
+        max-width: 90%;
     }
 }
