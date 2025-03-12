@@ -5,40 +5,21 @@
     box-sizing: border-box;
 }
 
-/* Smooth animated gradient background */
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
+/* Global Styles */
+/* Global Styles */
 body {
     font-family: 'Poppins', sans-serif;
-    color: #222;
-    background: linear-gradient(-45deg, #f5f7fa, #c3cfe2, #a1c4fd, #d4fc79);
-    background-size: 300% 300%;
-    animation: gradientShift 12s ease infinite; 
+    color: #222; 
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
     line-height: 1.8;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     transition: all 0.3s ease-in-out;
 }
-
-/* Adding a slight fade-in effect on page load */
-body {
-    opacity: 0;
-    animation: fadeInPage 1.5s ease-in-out forwards;
-}
-
-@keyframes fadeInPage {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 
 
 /* Header */
@@ -179,14 +160,17 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    font-size: 28px;
+    background-color: transparent;
+    /* Remove the black background */
     color: #fff;
-    background: linear-gradient(45deg, rgba(255, 0, 0, 0.4), rgba(0, 255, 0, 0.4), rgba(0, 0, 255, 0.4));
-    border: 2px solid transparent;
-    background-clip: padding-box;
+    border: 2px solid #fff;
+    /* White border to maintain visibility */
+    width: 60px;
+    /* Default size for larger screens */
+    height: 60px;
+    border-radius: 50%;
+    font-size: 30px;
+    /* Default font size for larger screens */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -194,14 +178,30 @@ body {
     opacity: 0;
     transition: opacity 0.5s ease, transform 0.3s ease;
     z-index: 1000;
+    /* Ensure button is above other content */
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    /* Initial glow */
     animation: rgbGlow 3s infinite alternate;
+    /* Apply the RGB glow effect */
+    background: linear-gradient(45deg, rgba(255, 0, 0, 0.3), rgba(0, 255, 0, 0.3), rgba(0, 0, 255, 0.3));
+    /* Gradient background */
+    border: 2px solid transparent;
+    background-clip: padding-box;
 }
 
+/* Hover Effect */
 .go-to-top-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Slightly visible on hover */
     transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
 }
+
+/* Show the button when scrolled down */
+.go-to-top-btn.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 /* Scroll Button Visibility */
 .show-scroll {
@@ -225,26 +225,8 @@ body {
         font-size: 18px;
     }
 
-    .go-to-top-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 26px;
-    }
 }
 
-
-/* Hover Effect */
-.go-to-top-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    /* Slightly visible on hover */
-    transform: scale(1.1);
-}
-
-/* Show the button when scrolled down */
-.go-to-top-btn.show {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 /* RGB Light Animation */
 @keyframes rgbGlow {
