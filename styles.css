@@ -5,20 +5,38 @@
     box-sizing: border-box;
 }
 
-/* Global Styles */
-/* Global Styles */
+/* Smooth animated gradient background */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 body {
     font-family: 'Poppins', sans-serif;
-    color: #222; 
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #222;
+    background: linear-gradient(-45deg, #f5f7fa, #c3cfe2, #a1c4fd, #d4fc79);
+    background-size: 300% 300%;
+    animation: gradientShift 12s ease infinite; 
     line-height: 1.8;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     transition: all 0.3s ease-in-out;
+}
+
+/* Adding a slight fade-in effect on page load */
+body {
+    opacity: 0;
+    animation: fadeInPage 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 
