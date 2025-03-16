@@ -228,7 +228,7 @@ function adjustMarqueeSpeed() {
 }
 
 //Holi Decorate
-
+/*
 window.addEventListener("load", () => {
   setTimeout(() => {
     confetti({
@@ -239,7 +239,7 @@ window.addEventListener("load", () => {
     });
   }, 500); // Delay for effect
 });
-
+*/
 
 fetchMarqueeMessage();
 
