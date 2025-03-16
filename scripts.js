@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   
   const searchInput = document.createElement("input");
   searchInput.setAttribute("type", "text");
-  searchInput.setAttribute("placeholder", "Search projects...");
+  searchInput.setAttribute("placeholder", "Search projects (Beta Test)...");
   searchInput.classList.add("search-box");
   
   const searchButton = document.createElement("button");
