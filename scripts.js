@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             </a>
         `;
 
+        
     // Add event listener to track project link clicks
     const projectLink = projectCard.querySelector(".project-link");
     projectLink.addEventListener("click", async (event) => {
@@ -65,6 +66,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     return projectCard;
   };
 
+  
   // Lazy load projects when in view
   const observer = new IntersectionObserver(async (entries, observer) => {
     for (const entry of entries) {
@@ -227,21 +229,6 @@ function adjustMarqueeSpeed() {
   }
 }
 
-//Holi Decorate
-/*
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    confetti({
-      particleCount: 250, // Number of colors
-      spread: 120, // Spread radius
-      origin: { y: 0.6 }, // Start position
-      colors: ["#FF0000", "#FF7F00", "#FFFF00", "#00FF00", "#0000FF", "#8B00FF"]
-    });
-  }, 500); // Delay for effect
-});
-*/
-
-//search and filter
 document.addEventListener("DOMContentLoaded", async () => {
   const projectsList = document.querySelector(".projects-list");
   
@@ -335,6 +322,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   
   await fetchProjects();
 });
+
 
 fetchMarqueeMessage();
 
