@@ -40,6 +40,7 @@ body {
 }
 
 
+
 /* Header */
 .header {
     text-align: center;
@@ -711,35 +712,4 @@ html.marquee-active {
       flex-grow: 1;
     }
   }
-
-/*holi effect*/
-/*
-.holi-banner {
-    background: linear-gradient(45deg, #ff4081, #ffea00, #4caf50, #2196f3);
-    padding: 3px 0;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    border-bottom: 5px solid #ff4081;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  }
   
-  marquee {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    text-transform: uppercase;
-    text-align: center;
-    animation: glow 1.5s infinite alternate;
-  }
-  
-  @keyframes glow {
-    0% { text-shadow: 2px 2px 10px #ff4081; }
-    100% { text-shadow: 2px 2px 20px #ffea00; }
-  }
-  
-*/
-
-
