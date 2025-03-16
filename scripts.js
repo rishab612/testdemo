@@ -241,5 +241,100 @@ window.addEventListener("load", () => {
 });
 */
 
+//search and filter
+document.addEventListener("DOMContentLoaded", async () => {
+  const projectsList = document.querySelector(".projects-list");
+  
+  const searchContainer = document.createElement("div");
+  searchContainer.classList.add("search-container");
+  
+  const searchInput = document.createElement("input");
+  searchInput.setAttribute("type", "text");
+  searchInput.setAttribute("placeholder", "Search projects...");
+  searchInput.classList.add("search-box");
+  
+  const searchButton = document.createElement("button");
+  searchButton.innerText = "Search";
+  searchButton.classList.add("search-button");
+  
+  searchContainer.appendChild(searchInput);
+  searchContainer.appendChild(searchButton);
+  
+  const categoryFilter = document.createElement("select");
+  categoryFilter.classList.add("category-filter");
+  categoryFilter.innerHTML = `
+    <option value="all">All Categories</option>
+    <option value="web">Web Development</option>
+    <option value="mobile">Mobile Apps</option>
+    <option value="ai">AI & ML</option>
+    <option value="other">Other</option>
+  `;
+  
+  const filterContainer = document.createElement("div");
+  filterContainer.classList.add("filter-container");
+  filterContainer.appendChild(searchContainer);
+  filterContainer.appendChild(categoryFilter);
+  document.querySelector(".projects").insertBefore(filterContainer, projectsList);
+  
+  let projects = [];
+  
+  const fetchProjects = async () => {
+    const querySnapshot = await getDocs(collection(db, "projects"));
+    projects = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+    renderProjects(projects);
+  };
+  
+  const renderProjects = (filteredProjects) => {
+    projectsList.innerHTML = "";
+    if (filteredProjects.length === 0) {
+      if (!document.querySelector(".no-results-image")) {
+        const noResultsImg = document.createElement("img");
+        noResultsImg.src = "yPMXzPK4h7Jx6FSC9GTs.png";
+        noResultsImg.alt = "No results found";
+        noResultsImg.classList.add("no-results-image");
+        projectsList.appendChild(noResultsImg);
+      }
+    } else {
+      filteredProjects.forEach((project) => {
+        const projectCard = document.createElement("div");
+        projectCard.classList.add("project-card");
+        projectCard.setAttribute("data-category", project.category);
+        projectCard.innerHTML = `
+          <h3>${project.title}</h3>
+          <p>${project.description}</p>
+          <a href="${project.link}" target="_blank" class="project-link">View on GitHub</a>
+        `;
+        projectsList.appendChild(projectCard);
+      });
+    }
+  };
+  
+  
+  searchButton.addEventListener("click", () => {
+    const searchText = searchInput.value.toLowerCase();
+    const filteredProjects = projects.filter((project) =>
+      project.title.toLowerCase().includes(searchText) ||
+      project.description.toLowerCase().includes(searchText)
+    );
+    renderProjects(filteredProjects);
+  });
+
+  searchInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      searchButton.click();
+    }
+  });
+  
+  categoryFilter.addEventListener("change", () => {
+    const selectedCategory = categoryFilter.value;
+    const filteredProjects = selectedCategory === "all"
+      ? projects
+      : projects.filter((project) => project.category === selectedCategory);
+    renderProjects(filteredProjects);
+  });
+  
+  await fetchProjects();
+});
+
 fetchMarqueeMessage();
 
