@@ -21,6 +21,18 @@ const analytics = getAnalytics(app);
 document.addEventListener("DOMContentLoaded", async () => {
   const projectsList = document.querySelector(".projects-list");
 
+  document.querySelector(".menu-toggle").addEventListener("click", () => {
+    document.querySelector(".navbar ul").classList.toggle("active");
+});
+
+ window.addEventListener('scroll', function() {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            
+            const progressBar = document.querySelector('.progress-bar');
+            progressBar.style.width = scrollPercent + '%';
+        });
   // Function to create a project card element
   const createProjectCard = (project, docId) => {
     const projectCard = document.createElement("div");
@@ -237,7 +249,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   
   const searchInput = document.createElement("input");
   searchInput.setAttribute("type", "text");
-  searchInput.setAttribute("placeholder", "Search projects (Beta Test)...");
+  searchInput.setAttribute("placeholder", "Search projects Beta Test...");
   searchInput.classList.add("search-box");
   
   const searchButton = document.createElement("button");
@@ -321,8 +333,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
   
   await fetchProjects();
+  
 });
-
 
 fetchMarqueeMessage();
 
