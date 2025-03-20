@@ -18,6 +18,14 @@
 
         document.addEventListener("DOMContentLoaded", async () => {
             const coursesList = document.querySelector(".courses-list");
+
+            document.addEventListener("DOMContentLoaded", async () => {
+  const projectsList = document.querySelector(".projects-list");
+
+  document.querySelector(".menu-toggle").addEventListener("click", () => {
+    document.querySelector(".navbar ul").classList.toggle("active");
+});
+
             
             // Function to create a course card element
             const createCourseCard = (course) => {
