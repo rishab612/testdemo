@@ -17,42 +17,48 @@
         const db = getFirestore(app);
 
         document.addEventListener("DOMContentLoaded", async () => {
-            const coursesList = document.querySelector(".courses-list");
+    const coursesList = document.querySelector(".courses-list");
 
-            document.querySelector(".menu-toggle").addEventListener("click", () => {
-    document.querySelector(".navbar ul").classList.toggle("active");
+    document.querySelector(".menu-toggle").addEventListener("click", () => {
+        document.querySelector(".navbar ul").classList.toggle("active");
+    });
+
+    // Function to create a course card element
+    const createCourseCard = (course) => {
+        const courseCard = document.createElement("div");
+        courseCard.classList.add("course-card");
+
+        courseCard.innerHTML = `
+            <h3>${course.title}</h3>
+            <p>${course.description}</p>
+            <a href="${course.link}" target="_blank" class="course-link">Enroll Now</a>
+        `;
+        return courseCard;
+    };
+
+    // Fetch courses from Firebase
+    try {
+        const querySnapshot = await getDocs(collection(db, "courses"));
+        if (querySnapshot.empty) {
+            coursesList.innerHTML = `
+                <p>No courses available at the moment.</p>
+                <img src="1000078925.jpg" alt="No content available" style="max-width: 100%; height: auto; display: block; margin: auto;">
+            `;
+        } else {
+            querySnapshot.forEach((doc) => {
+                const course = doc.data();
+                const courseCard = createCourseCard(course);
+                coursesList.appendChild(courseCard);
+            });
+        }
+    } catch (error) {
+        console.error("Error fetching courses: ", error);
+        coursesList.innerHTML = `
+            <p>Error loading courses. Please try again later.</p>
+            <img src="1000078925.jpg" alt="Error loading content" style="max-width: 100%; height: auto; display: block; margin: auto;">
+        `;
+    }
 });
-            
-            // Function to create a course card element
-            const createCourseCard = (course) => {
-                const courseCard = document.createElement("div");
-                courseCard.classList.add("course-card");
-                
-                courseCard.innerHTML = `
-                    <h3>${course.title}</h3>
-                    <p>${course.description}</p>
-                    <a href="${course.link}" target="_blank" class="course-link">Enroll Now</a>
-                `;
-                return courseCard;
-            };
-            
-            // Fetch courses from Firebase
-            try {
-                const querySnapshot = await getDocs(collection(db, "courses"));
-                if (querySnapshot.empty) {
-                    coursesList.innerHTML = "<p>No courses available at the moment.</p>";
-                } else {
-                    querySnapshot.forEach((doc) => {
-                        const course = doc.data();
-                        const courseCard = createCourseCard(course);
-                        coursesList.appendChild(courseCard);
-                    });
-                }
-            } catch (error) {
-                console.error("Error fetching courses: ", error);
-                coursesList.innerHTML = "<p>Error loading courses. Please try again later.</p>";
-            }
-        });
     </script>
     <style>
         .courses {
